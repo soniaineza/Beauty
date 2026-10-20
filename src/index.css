@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-ivory-50 text-espresso-800 font-sans;
+    font-weight: 400;
+  }
+
+  h1, h2, h3, h4, h5 {
+    @apply font-serif;
+  }
+
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-burgundy-500;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-burgundy-600 px-7 py-3.5 text-sm font-medium uppercase tracking-wider text-ivory-50 transition-all duration-300 hover:bg-burgundy-700 hover:shadow-lg hover:shadow-burgundy-600/20 active:scale-[0.97];
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-espresso-700/30 bg-transparent px-7 py-3.5 text-sm font-medium uppercase tracking-wider text-espresso-800 transition-all duration-300 hover:border-espresso-700/60 hover:bg-espresso-800 hover:text-ivory-50 active:scale-[0.97];
+  }
+
+  .btn-whatsapp {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-3 text-sm font-medium uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#1DB954] hover:shadow-lg hover:shadow-[#25D366]/20 active:scale-[0.97];
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-1.5 text-sm font-medium uppercase tracking-wider text-espresso-800 transition-colors duration-300 hover:text-burgundy-600;
+  }
+
+  .section-eyebrow {
+    @apply text-xs font-medium uppercase tracking-[0.25em] text-burgundy-500;
+  }
+
+  .input-field {
+    @apply w-full rounded-xl border border-espresso-700/15 bg-white px-4 py-3 text-sm text-espresso-800 placeholder:text-espresso-700/40 transition-colors duration-200 focus:border-burgundy-500 focus:outline-none focus:ring-1 focus:ring-burgundy-500/30;
+  }
+
+  .product-badge {
+    @apply inline-flex items-center rounded-full px-3 py-1 text-[0.65rem] font-medium uppercase tracking-wider;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
